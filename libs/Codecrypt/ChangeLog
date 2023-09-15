@@ -1,0 +1,118 @@
+
+Codecrypt ChangeLog
+
+1.7.6
+
+- small improvements in keyring, hash verification and documentation
+- allow user-supplied random seed source
+- fix warnings on clang
+
+1.7.5
+
+- standardize Cubehash implementation
+	(all implications for FMTSeq keys and KeyIDs are documented in FAQ)
+
+- remove obsolete MCE-QD
+- support big-endian architectures
+
+1.7.4
+
+- maintenance release that fixes some cosmetic issues for debianization
+
+1.7.3
+
+- tiny fixes in mce_qcmdpc to improve decoding
+
+1.7.2
+
+- better autoconfiguration of crypto++ include path
+- support redirection to `-'
+- add -E option
+- update docs a bit
+- correctly escape outputs
+
+1.7.1
+
+- rewrite QC-MDPC decoding for speed (still around O(wi^2))
+- fix the padding broken on non-byte-aligned numbers
+
+1.7
+
+- add QC-MDPC McEliece variant
+- mark QD McEliece as broken
+- reimplement bit vectors (for speed)
+- some code quality updates
+- prevent mangling of command line output by crafted keyring
+
+1.6.1
+
+- simplify padding for symmetric encryption
+- fix possible known-plaintext attack against symmetric encryption padding
+
+1.6
+
+- fix fmtseq short message padding bug (fixed by previous)
+- virtualize the stream ciphers
+- add ChaCha20
+- add XSYND
+- remove RC4 from standard PRNG
+- fix possible side-channel attack on F-O decryption timing
+- remove RC4 usage from FMTSEQ, replace with ChaCha20, rename algos
+- add support for symmetric encryption (long files!)
+- add several new encryption ciphers (use xsynd and chacha)
+- add convenience aliases for --gen-key
+
+1.5
+
+- add hashfile support with -S
+- gf2m log/antilog saving, and several other speedups
+- switched to icase matching for key names
+
+1.4.1
+
+- compile on windows
+- cleanup some code, clarify&be helpful on the `-a' option
+- prevent possible memory corruption on FMTSeq mangled privkeys
+- prevent keyring corruption by interrupted write
+- make keyring backups and don't do unnecessary writes
+
+1.4
+
+- add Cubehash, spawn all algorithms using only Cubehash
+- make crypto++ dependency optional
+- cubehash256 is now used for KeyIDs instead of SHA256
+- bump message and keyring version strings
+
+1.3.1
+
+- get rid of bundled hash sources and licensing problems
+
+1.3
+
+- fix too aggressive locking of keyring that caused deadlocks on piping
+- fix many warnings and code inconsistencies
+- correct licensing information from ccr --version
+- prevent possible problems with forged sencode
+- add this helpful changelog :)
+
+1.2
+
+- improve arcfour usage (much stuff is thus incompatible with older versions)
+- added a manual page
+- added H20 variants of FMTSeq (they provide more than 1M signatures)
+
+1.1
+
+- several speed improvements (colex ranking and MceQD decoding)
+- cleanup of some unneeded parts
+
+1.0
+
+- key naming fixes
+- add 2^192-secure algorithm variants
+- improve message padding for encryption (incompatible with previous format)
+
+0.9
+
+- first released version
+
